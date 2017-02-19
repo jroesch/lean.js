@@ -2,7 +2,7 @@ import tools.native
 import tools.native.ir
 import system.io
 
-import .format_js
+import .format
 import tools.debugger
 
 set_option debugger true
@@ -13,5 +13,3 @@ meta def js_compiler : native.ir.context → io unit :=
 
 @[backend] meta def js_backend : ir.backend :=
     ⟨ js_compiler ⟩
-
-def main : io unit := put_str "T"

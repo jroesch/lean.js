@@ -250,7 +250,7 @@ meta def split_items : list ir.item → (list ir.defn × list ir.decl × list ir
 -- meta def declarations (decls : list ir.decl) : format :=
 --   "namespace lean" ++ format.space ++ block (format_lines (list.map declaration decls))
 
-meta def requires : format := "const lean = require('./runtime');"
+meta def requires : format := "const lean = require('lean-runtime');"
 
 meta def definitions (defs : list ir.defn) : format :=
   insert_newlines 2 $ list.map defn defs
