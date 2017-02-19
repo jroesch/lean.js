@@ -78,11 +78,12 @@ Lean.invoke = function (fn, arg) {
 }
 
 Lean.to_string = function (str) {
-    let string = "";
+    let chars = [];
     while (Lean.tag(str) != 0) {
-        string += String.fromCharCode(str.fields[0]);
+        chars.push(String.fromCharCode(str.fields[0]));
         str = str.fields[1]
     }
-    return string;
+    chars.reverse();
+    return chars.join("");
 }
 
